@@ -1,4 +1,4 @@
-package course.enhiretance.entities;
+package course.inheritance2.entities;
 
 public class Account {
 

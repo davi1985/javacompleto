@@ -1,4 +1,4 @@
-package course.enhiretance.entities;
+package course.inheritance3.entities;
 
 public class SavingsAccount extends Account{
 
@@ -25,4 +25,8 @@ public class SavingsAccount extends Account{
 		balance += balance * interestRate;
 	}
 
+	@Override
+	public final void withdraw(double amount) {
+		balance -= amount;
+	}
 }

@@ -1,8 +1,9 @@
-package course.enhiretance.application;
 
-import course.enhiretance.entities.Account;
-import course.enhiretance.entities.BusinessAccount;
-import course.enhiretance.entities.SavingsAccount;
+package course.inheritance.application;
+
+import course.inheritance.entities.Account;
+import course.inheritance.entities.BusinessAccount;
+import course.inheritance.entities.SavingsAccount;
 
 public class Program {
 	

@@ -1,4 +1,4 @@
-package course.enhiretance.entities;
+package course.inheritance.entities;
 
 public class BusinessAccount extends Account {
 

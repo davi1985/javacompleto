@@ -1,6 +1,6 @@
 package course.interface1.model.services;
 
-public class BazilTaxService {
+public class BazilTaxService implements TaxService {
 
     public double tax(double amount) {
 

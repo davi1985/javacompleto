@@ -16,33 +16,33 @@ public class Program {
     public static void main(String[] args) throws ParseException {
 
         Locale.setDefault(Locale.US);
-        Scanner sc = new Scanner(System.in);
+        Scanner scan = new Scanner(System.in);
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:ss");
 
         System.out.println("Enter a rental data: ");
         System.out.print("Car model: ");
-        String carModel = sc.nextLine();
+        String carModel = scan.nextLine();
         System.out.print("Pickup (dd/MM/yyyy hh:ss): ");
-        Date start = sdf.parse(sc.nextLine());
+        Date start = sdf.parse(scan.nextLine());
         System.out.print("Return (dd/MM/yyyy hh:ss): ");
-        Date finish = sdf.parse(sc.nextLine());
+        Date finish = sdf.parse(scan.nextLine());
 
         CarRental carRental = new CarRental(start, finish, new Vehicle(carModel));
 
         System.out.println("Enter price per hour: ");
-        double pricePerHour = sc.nextDouble();
+        double pricePerHour = scan.nextDouble();
         System.out.println("Enter price per day: ");
-        double pricePerDay = sc.nextDouble();
+        double pricePerDay = scan.nextDouble();
 
         RentalService rentalService = new RentalService(pricePerDay, pricePerHour, new BazilTaxService());
 
         rentalService.processInvoice(carRental);
 
         System.out.println("INVOICE: ");
-        System.out.println("Basic payment: " + String.format("%.2f", carRental.getInvoice().getBasicPayment()));
+        System.out.println("Basic payment: $" + String.format("%.2f", carRental.getInvoice().getBasicPayment()));
         System.out.println("Tax: " + String.format("%.2f", carRental.getInvoice().getTax()));
-        System.out.println("Total payment: " + String.format("%.2f", carRental.getInvoice().getTotalPayment()));
+        System.out.println("Total payment: $" + String.format("%.2f", carRental.getInvoice().getTotalPayment()));
 
-        sc.close();
+        scan.close();
     }
 }

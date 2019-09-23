@@ -27,7 +27,7 @@ public class Program {
 
         String targetFileStr = sourceFolderStr + "/out/summary.csv";
 
-        try (BufferedReader br = new BufferedReader(new FileReader(sourceFileStr))){
+        try (BufferedReader br = new BufferedReader(new FileReader(sourceFileStr))) {
 
             String itemCsv = br.readLine();
             while (itemCsv != null) {
@@ -36,11 +36,11 @@ public class Program {
                 double price = Double.parseDouble(fields[1]);
                 int quantity = Integer.parseInt(fields[2]);
 
-                list.add(new Product(name,price,quantity));
+                list.add(new Product(name, price, quantity));
                 itemCsv = br.readLine();
             }
 
-            try (BufferedWriter bw = new BufferedWriter(new FileWriter(targetFileStr))){
+            try (BufferedWriter bw = new BufferedWriter(new FileWriter(targetFileStr))) {
 
                 for (Product item : list) {
                     bw.write(item.getName() + ", " + String.format("%.2f", item.total()));
@@ -49,12 +49,12 @@ public class Program {
 
                 System.out.println(targetFileStr + " created!");
 
-            }catch (IOException e){
+            } catch (IOException e) {
                 System.out.println();
                 System.out.println("Error: " + e.getMessage());
             }
 
-        }catch (IOException e){
+        } catch (IOException e) {
             System.out.println("Error: " + e.getMessage());
         }
     }

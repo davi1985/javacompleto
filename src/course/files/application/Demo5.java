@@ -17,7 +17,7 @@ public class Demo5 {
 
         System.out.println();
 
-        //refernce methods File::isDirectory
+        //reference methods File::isDirectory
         File[] folders = path.listFiles(File::isDirectory);
         System.out.println("FOLDERS: ");
 

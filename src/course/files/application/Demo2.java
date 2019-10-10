@@ -8,6 +8,7 @@ import java.io.IOException;
 public class Demo2 {
     public static void main(String[] args) {
 
+        // file path name
         String path = "/home/davi/in.txt";
         BufferedReader br = null;
         FileReader fr = null;

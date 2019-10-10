@@ -8,10 +8,12 @@ public class Demo1 {
 
     public static void main(String[] args) {
 
+        // file pathname
         File file = new File("/home/davi/in.txt");
         Scanner scan = null;
 
         try {
+            //reading file with Scanner class
             scan = new Scanner(file);
             while (scan.hasNextLine()) {
                 System.out.println(scan.nextLine());

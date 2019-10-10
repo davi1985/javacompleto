@@ -8,6 +8,7 @@ public class Demo4 {
         //writing file;
         String[] lines = new String[]{"Good morning", "Good afertnoon", "Good night"};
 
+        //new file
         String path = "/home/davi/out.txt";
 
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(path))) {

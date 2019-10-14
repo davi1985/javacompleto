@@ -30,19 +30,21 @@ public class Program {
 
         //reference method non static
         System.out.println("Using non static method");
-        List<String> names2 = list.stream().map(Product::nonStaticUpperCaseName).collect(Collectors.toList());
+        List<String> names2 = list.stream()
+                .map(Product::nonStaticUpperCaseName)
+                .collect(Collectors.toList());
+
         names.forEach(System.out::println);
 
         //expression lambda
-        System.out.println("Using experssion lambda");
+        System.out.println("Using expression lambda");
         Function<Product, String> upperCaseName = p -> p.getName().toUpperCase();
         List<String> names3 = list.stream().map(upperCaseName).collect(Collectors.toList());
         names.forEach(System.out::println);
 
         //lambda inline
         System.out.println("Using lambda inline");
-        List<String> names4 =
-                list.stream().map(product -> product.getName().toUpperCase()).collect(Collectors.toList());
+        List<String> names4 = list.stream().map(p -> p.getName().toUpperCase()).collect(Collectors.toList());
         names.forEach(System.out::println);
     }
 }

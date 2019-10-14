@@ -35,8 +35,8 @@ public class Program {
             double salary = scanner.nextDouble();
 
             List<String> emails = list.stream()
-                    .filter(x -> x.getSalary() > salary)
-                    .map(x -> x.getEmail())
+                    .filter(employee -> employee.getSalary() > salary)
+                    .map(Employee::getEmail) // method reference
                     .sorted()
                     .collect(Collectors.toList());
 
@@ -44,9 +44,9 @@ public class Program {
             emails.forEach(System.out::println);
 
             double sum = list.stream()
-                    .filter(x -> x.getName().charAt(0) == 'M')
-                    .map(x -> x.getSalary())
-                    .reduce(0.0, (x, y) -> x + y);
+                    .filter(employee -> employee.getName().charAt(0) == 'M')
+                    .map(Employee::getSalary) // method reference
+                    .reduce(0.0, Double::sum); // method reference
 
             System.out.println("Sum of salary from people whose name starts with 'M': " + String.format("%.2f", sum));
 
